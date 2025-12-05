@@ -1,5 +1,10 @@
 
+<<<<<<< HEAD
 
+=======
+import java.awt.*;
+import java.awt.event.*;
+>>>>>>> ac0efe382690deffec18a48449f867b501348ebb
 import javax.swing.*;
 import java.util.regex.*;
 
@@ -267,9 +272,14 @@ public class Registration extends javax.swing.JFrame {
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
         String phone = jTextField3.getText();
+<<<<<<< HEAD
         if (phone.matches("^[0-9]{10}$") && phone.length() == 10) {
             // Valid phone number
         }
+=======
+        if (phone.matches("^[0-9]") && phone.length() == 10)
+            ;
+>>>>>>> ac0efe382690deffec18a48449f867b501348ebb
     }
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,8 +334,11 @@ public class Registration extends javax.swing.JFrame {
         if (Database.insertUser(user)) {
             JOptionPane.showMessageDialog(this, "User registered successfully!", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
+<<<<<<< HEAD
             // Clear all fields after successful registration
             clearFormFields();
+=======
+>>>>>>> ac0efe382690deffec18a48449f867b501348ebb
         } else {
             JOptionPane.showMessageDialog(this, "Failed to register user. Try again.", "Error",
                     JOptionPane.ERROR_MESSAGE);
@@ -333,6 +346,7 @@ public class Registration extends javax.swing.JFrame {
 
     }
 
+<<<<<<< HEAD
     private void clearFormFields() {
         jTextField2.setText("");
         jTextField3.setText("");
@@ -342,6 +356,8 @@ public class Registration extends javax.swing.JFrame {
         jTextField2.requestFocus();
     }
 
+=======
+>>>>>>> ac0efe382690deffec18a48449f867b501348ebb
     private boolean isValidEmail(String email) {
         // Regular expression to validate email address
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
