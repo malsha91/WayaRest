@@ -1,7 +1,5 @@
-package Practicals;
 
-import java.awt.*;
-import java.awt.event.*;
+
 import javax.swing.*;
 import java.util.regex.*;
 
@@ -269,8 +267,9 @@ public class Registration extends javax.swing.JFrame {
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
         String phone = jTextField3.getText();
-        if (phone.matches("^[0-9]") && phone.length() == 10)
-            ;
+        if (phone.matches("^[0-9]{10}$") && phone.length() == 10) {
+            // Valid phone number
+        }
     }
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,11 +324,22 @@ public class Registration extends javax.swing.JFrame {
         if (Database.insertUser(user)) {
             JOptionPane.showMessageDialog(this, "User registered successfully!", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
+            // Clear all fields after successful registration
+            clearFormFields();
         } else {
             JOptionPane.showMessageDialog(this, "Failed to register user. Try again.", "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+
+    private void clearFormFields() {
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField2.requestFocus();
     }
 
     private boolean isValidEmail(String email) {
